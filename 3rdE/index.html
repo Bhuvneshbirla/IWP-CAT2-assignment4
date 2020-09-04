@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  
+<head> 
+    <meta charset="utf-8"> 
+    <style> 
+        p { 
+            color: grey; 
+            margin: 10px; 
+            padding: 10px; 
+        } 
+          
+        form { 
+            margin: 10px; 
+            padding: 10px; 
+        } 
+          
+        #article b { 
+            color: blue; 
+            font-weight: bold; 
+        } 
+          
+        label { 
+            color: green; 
+            font-weight: bold; 
+        } 
+    </style> 
+    <script src= 
+"https://code.jquery.com/jquery-1.10.2.js"> 
+    </script> 
+</head> 
+  
+<body> 
+  
+    <p><em>Hello</em>GeeksforGeeks</p> 
+    <p id="article"><b>Article Info: </b></p> 
+    <form> 
+        <label>Article Title:</label> 
+        <input type="text"
+               name="article" 
+               value="jQuery |  
+                     Traversing Example 2" /> 
+        <br> 
+        <br> 
+        <label>Author:</label> 
+        <input type="text"
+               name="author"
+               value="Vignesh" /> 
+        <br> 
+        <br> 
+        <label>Author's Email id:</label> 
+        <input type="text"
+               name="author" 
+               value="vignesh@gmail.com" /> 
+        <br> 
+        <br> 
+        <label>Website:</label> 
+        <input type="text" 
+               name="url"
+               value="https://www.geeksforgeeks.org/" /> 
+        <br> 
+        <br> 
+    </form> 
+  
+    <script> 
+        $("#article") 
+            .append($("input").map(function() { 
+                    return $(this).val(); 
+                }) 
+                .get() 
+                .join(", ")); 
+    </script> 
+    <script> 
+        $("p") 
+            .find("em") 
+            .end() 
+            .css("border", "2px red solid"); 
+    </script> 
+  
+</body> 
+  
+</html> 
